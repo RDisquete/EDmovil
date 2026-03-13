@@ -225,7 +225,7 @@ const Home: React.FC = () => {
       <section className="relative flex items-center justify-center h-screen overflow-hidden">
         <div
           className="absolute inset-0 transition-all duration-200 bg-center bg-cover"
-          style={{ backgroundImage: "url('/imgHome.jpg')" }}
+          style={{ backgroundImage: "url('/imgHome.webp')" }}
           aria-hidden
         />
         <div className="absolute inset-0 bg-black/50" aria-hidden />

@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaPhoneAlt, FaEnvelope, FaInstagram, FaWhatsapp } from 'react-icons/fa'; 
 
-const LOGO_PATH = '/logoPNG.png'; 
+const LOGO_PATH = '/logoPNG.svg'; 
 
 const YourLogo: React.FC = () => (
     <div className="flex items-center justify-center">

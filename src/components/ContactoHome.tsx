@@ -80,7 +80,7 @@ const AnimatedReveal: React.FC<AnimatedRevealProps> = ({
 
 const ContactoHome: React.FC = () => {
 
-  const mainImage = "/woman-in-sunglasses-talking-on-the-smartphone-whil-2024-09-22-03-56-37-utc.jpg";
+  const mainImage = "/woman_glases.webp";
   return (
     <section
       className="relative flex items-center w-full min-h-screen py-20 overflow-hidden bg-black md:py-0"
@@ -104,18 +104,19 @@ const ContactoHome: React.FC = () => {
       >
         <div className="flex flex-col items-center justify-between md:flex-row">
 
-          <div className=" w-full md:w-1/2 relative h-[50vh] md:h-[60vh] mb-12 md:mb-0 order-2 md:order-1 flex justify-center items-center">
+        <div className="w-full md:w-1/2 relative h-auto md:h-[60vh] mb-12 md:mb-0 order-2 md:order-1 flex justify-center items-center">
 
-            <AnimatedReveal delay={300} fromDirection="left"
-              wrapperClassName="absolute -left-8 top-1/2 -translate-y-1/2 w-[90%] h-full z-20"
-              className="">
-              <img
-                src={mainImage}
-                alt="Conexión de fibra cercana y amigable"
-                className="object-cover w-full h-full rounded-2xl "
-              />
-            </AnimatedReveal>
-          </div>
+{/* MODIFICACIÓN: Cambiamos absolute por relative md:absolute para que en móvil fluya */}
+<AnimatedReveal delay={300} fromDirection="left"
+  wrapperClassName="relative md:absolute md:-left-8 top-0 md:top-1/2 md:-translate-y-1/2 w-[90%] md:h-full z-20 mt-8 md:mt-0"
+  className="w-full h-full">
+  <img
+    src={mainImage}
+    alt="Conexión de fibra cercana y amigable"
+    className="object-cover w-full h-full rounded-2xl"
+  />
+</AnimatedReveal>
+</div>
 
           <div className="relative order-1 w-full text-center md:w-1/2 md:order-2 md:text-left">
             <AnimatedReveal delay={1200} fromDirection="right">

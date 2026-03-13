@@ -60,7 +60,7 @@ const Header = () => {
           className="flex items-center space-x-2 transition-transform duration-200 ease-in-out hover:scale-105"
         >
           <img
-            src="/logoPNG.png"
+            src="/logoPNG.svg"
             alt="EM Movil Logo"
             className="w-auto h-24"
           />
@@ -80,19 +80,19 @@ const Header = () => {
 
         <nav className="items-center hidden space-x-8 md:flex">
           <Link
-            to="/about"
+            to="/nosotros"
             className={textLinkClasses}
           >
             ¿Quienes somos?
           </Link>
              <Link
-            to="/tariffs"
+            to="/tarifas"
             className={textLinkClasses}
           >
             Tarifas
           </Link>
           <Link
-            to="/contact"
+            to="/contacto"
             className={contactButtonClasses}
           >
             Contacto
@@ -108,21 +108,21 @@ const Header = () => {
         <nav className="flex flex-col items-center space-y-4">
           
           <Link
-            to="/about"
+            to="/nosotros"
             className={textLinkClasses + " py-2"}
             onClick={closeMenu}
           >
             ¿Quienes somos?
           </Link>
           <Link
-            to="/tariffs"
+            to="/tarifas"
             className={textLinkClasses + " py-2"}
             onClick={closeMenu}
           >
             Tarifas
           </Link>
           <Link
-            to="/contact"
+            to="/contacto"
             className={contactButtonClasses}
             onClick={closeMenu}
           >

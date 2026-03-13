@@ -83,31 +83,36 @@ const AboutPage: React.FC = () => {
 
         <main className="min-h-screen overflow-x-hidden font-sans antialiased text-white bg-black">
 
-            <section className="relative w-full min-h-[55vh] overflow-hidden bg-black text-white">
+<section className="relative w-full min-h-[60vh] overflow-hidden bg-black text-white flex items-center">
+                {/* El sólido amarillo con tu inclinación y ancho original */}
                 <div
                     className="absolute top-0 left-0 w-full h-full origin-top-left bg-[#FFC72C] transform -skew-y-3 md:w-3/5"
                     aria-hidden="true"
                 />
 
-                <div className="absolute top-0 left-0 flex items-center w-full h-full">
-                    <div className="w-full px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-                        <div className="relative z-10 w-full pt-24 pb-8 md:w-4/5">
-                            <AnimatedReveal delay={300} fromDirection="top">
-                                <p className="text-xl font-black tracking-widest text-white uppercase">
-                                    QUIÉNES SOMOS
-                                </p>
-                            </AnimatedReveal>
-                            <AnimatedReveal delay={500} fromDirection="left">
-                                <h1 className="mt-2 text-6xl font-extrabold text-black md:text-8xl">
-                                    La Fibra <span className='italic'>de Casa</span>
-                                </h1>
-                            </AnimatedReveal>
-                            <AnimatedReveal delay={700} fromDirection="left">
-                                <p className="max-w-xl mt-4 text-xl font-black text-black">
-                                    Somos EM Móvil, pero nos gusta decir que somos "los de aquí". Nacimos con una idea clara: conectar a nuestra gente con la mejor fibra y móvil, <strong>sin líos, sin excusas y con la honestidad de un trato de vecindad.</strong>
-                                </p>
-                            </AnimatedReveal>
-                        </div>
+                <div className="relative z-10 w-full px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+                    {/* CORRECCIÓN PARA TABLET: 
+                        Limitamos el max-w al 50% para que el texto nunca toque 
+                        la diagonal del fondo amarillo (que está al 60%).
+                    */}
+                    <div className="w-full md:max-w-[50%] pt-16 pb-8">
+                        <AnimatedReveal delay={300} fromDirection="top">
+                            <p className="text-xl font-black tracking-widest text-black/80 uppercase">
+                                QUIÉNES SOMOS
+                            </p>
+                        </AnimatedReveal>
+                        
+                        <AnimatedReveal delay={500} fromDirection="left">
+                            <h1 className="mt-2 text-6xl font-extrabold text-black md:text-8xl leading-[0.9]">
+                                La Fibra <span className='italic block md:inline'>de Casa</span>
+                            </h1>
+                        </AnimatedReveal>
+                        
+                        <AnimatedReveal delay={700} fromDirection="left">
+                            <p className="max-w-xl mt-6 text-xl font-black text-black leading-tight">
+                                Somos EM Móvil, pero nos gusta decir que somos "los de aquí". Nacimos con una idea clara: conectar a nuestra gente con la mejor fibra y móvil, <strong>sin líos, sin excusas y con la honestidad de un trato de vecindad.</strong>
+                            </p>
+                        </AnimatedReveal>
                     </div>
                 </div>
             </section>

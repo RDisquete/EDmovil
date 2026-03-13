@@ -21,11 +21,11 @@ export const App = () => {
             {/* Ruta principal (Home) */}
             <Route path="/" element={<Home />} />
             {/* 💡 NUEVA RUTA: Página Nosotros */}
-            <Route path="/about" element={<AboutPage />} />
+            <Route path="/nosotros" element={<AboutPage />} />
             {/* Ruta de Contacto */}
-            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/contacto" element={<ContactPage />} />
                {/* 💡 NUEVA RUTA: Página de Tarifas */}
-               <Route path="/tariffs" element={<TariffsPage />} /> 
+               <Route path="/tarifas" element={<TariffsPage />} /> 
             
 
             {/* Puedes añadir una ruta de 404 aquí si quieres */}
