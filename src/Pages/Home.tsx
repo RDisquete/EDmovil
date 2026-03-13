@@ -1,8 +1,9 @@
-import React, { useRef, useState } from 'react'; 
+import React, { useRef, useState } from 'react';
 import { FaWhatsapp, FaInstagram, FaChevronDown, FaEnvelope } from 'react-icons/fa';
 import AnimatedReveal from '../components/AnimatedReveal';
 import ImagesHome from '../components/ImagesHome';
 import ContactoHome from '../components/ContactoHome';
+import { Link } from 'react-router-dom';
 
 const getPriceValue = (price: string): number => {
   const numericString = price.replace(/[^\d.,]/g, '').replace(',', '.');
@@ -77,7 +78,7 @@ const tariffs: Tariff[] = [
 
 interface TariffCardInnerProps {
   tariff: Tariff;
-  onClick: (tariff: Tariff) => void; 
+  onClick: (tariff: Tariff) => void;
 }
 
 const TariffCardInner: React.FC<TariffCardInnerProps> = ({ tariff, onClick }) => {
@@ -86,7 +87,7 @@ const TariffCardInner: React.FC<TariffCardInnerProps> = ({ tariff, onClick }) =>
       tabIndex={0}
       aria-label={tariff.name}
       onClick={() => onClick(tariff)}
-      onKeyDown={(e) => { 
+      onKeyDown={(e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           onClick(tariff);
         }
@@ -142,14 +143,14 @@ const TariffModal: React.FC<TariffModalProps> = ({ tariff, onClose }) => {
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
-      onClick={onClose} 
+      onClick={onClose}
       role="dialog"
       aria-modal="true"
       aria-labelledby="modal-title"
     >
       <div
         className="w-full max-w-xl p-8 transition-all duration-300 transform bg-white rounded-xl shadow-2xl shadow-[#FFC72C]/40"
-        onClick={(e) => e.stopPropagation()} 
+        onClick={(e) => e.stopPropagation()}
         role="document"
       >
         <header className="flex items-start justify-between mb-6">
@@ -187,12 +188,12 @@ const TariffModal: React.FC<TariffModalProps> = ({ tariff, onClose }) => {
         </ul>
 
         <div className="mt-8 text-center">
-          <a
-            href="/contact"
+          <Link
+            to="/contacto"
             className="inline-flex items-center justify-center px-8 py-3 font-bold text-white transition-colors duration-200 bg-[#FFC72C] rounded-xl hover:bg-[#E0B028]"
           >
             ¡CONTRATAR AHORA!
-          </a>
+          </Link>
         </div>
       </div>
     </div>
@@ -237,8 +238,8 @@ const Home: React.FC = () => {
           </AnimatedReveal>
 
           <AnimatedReveal delay={500} fromDirection="bottom">
-            <a
-              href="/contact"
+            <Link
+              to="/contacto"
               aria-label="Contactar con la empresa"
               className={[
                 'mt-12 mx-auto inline-flex items-center justify-center px-8 py-3.5 text-lg font-bold rounded-xl relative z-10',
@@ -253,7 +254,7 @@ const Home: React.FC = () => {
               ].join(' ')}
             >
               CONTACTAR AHORA
-            </a>
+            </Link>
           </AnimatedReveal>
         </div>
 
@@ -307,9 +308,8 @@ const Home: React.FC = () => {
           </div>
         </div>
         <div className="mt-16 text-center home-title-animated">
-
-          <a
-            href="/tariffs"
+          <Link
+            to="/tarifas"
             className={[
               'inline-flex items-center justify-center px-8 py-3.5 text-lg font-bold rounded-xl relative z-10',
               'transition-all duration-300 ease-out',
@@ -324,7 +324,7 @@ const Home: React.FC = () => {
             aria-label="Ver todos los planes de la empresa"
           >
             VER TODOS LOS PLANES
-          </a>
+          </Link>
         </div>
       </section>
 

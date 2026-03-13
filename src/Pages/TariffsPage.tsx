@@ -194,7 +194,7 @@ const TariffCard: React.FC<TariffCardProps> = ({ tariff }) => {
             </div>
 
             <Link
-                to="/contact" 
+                to="/contacto" 
                 aria-label={`Contactar sobre el plan ${tariff.name}`}
                 className={buttonClasses} 
             >
@@ -314,7 +314,7 @@ const TariffsPage: React.FC = () => {
                             No te quedes con la duda. Un vecino nuestro te revisa el domicilio.
                         </p>
                         <Link
-                            to="/contact"
+                            to="/contacto"
                             className="inline-flex items-center px-10 py-4 mt-8 text-lg font-black text-white transition-colors duration-300 bg-black rounded-full shadow-lg hover:bg-black/90"
                         >
                             <ExternalLink className="w-5 h-5 mr-2" />

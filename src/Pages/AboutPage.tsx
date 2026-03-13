@@ -180,7 +180,7 @@ const AboutPage: React.FC = () => {
                             No te compliques, tenemos el plan perfecto para ti.
                         </p>
                         <Link
-                            to="/tariffs"
+                            to="/tarifas"
                             className="inline-block px-10 py-4 mt-8 text-lg font-black text-white transition-colors duration-300 bg-black rounded-full shadow-lg hover:bg-white hover:text-black"
                         >
                             Ver Planes Sin Líos
