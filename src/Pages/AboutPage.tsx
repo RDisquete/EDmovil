@@ -50,12 +50,20 @@ interface PillarCardProps {
 }
 
 const PillarCard: React.FC<PillarCardProps> = ({ icon, title, description }) => (
-    <div className="flex flex-col items-center p-8 text-center transition-all duration-300 transform bg-black shadow-xl rounded-2xl hover:scale-[1.03] border-2 border-[#FFC72C] text-white">
-        <div className="w-16 h-16 flex items-center justify-center mb-4 rounded-full bg-[#FFC72C] text-black shadow-lg">
+    <div className="group flex flex-col items-center p-8 text-center bg-black border border-[#FFC72C] rounded-2xl shadow-xl transition-all duration-300 hover:border-[#FFC72C] hover:shadow-[0_20px_40px_-5px_rgba(255,199,44,0.15)] hover:-translate-y-2">
+        
+        {/* Icono con efecto de rotación suave al pasar el ratón */}
+        <div className="w-16 h-16 flex items-center justify-center mb-6 rounded-2xl bg-[#FFC72C] text-black shadow-lg transition-transform duration-300 group-hover:rotate-6">
             {icon}
         </div>
-        <h3 className="text-2xl font-black text-white">{title}</h3>
-        <p className="mt-3 text-lg text-white/90">{description}</p>
+        
+        <h3 className="text-2xl font-black text-white group-hover:text-[#FFC72C] transition-colors duration-300">
+            {title}
+        </h3>
+        
+        <p className="mt-4 text-lg text-gray-400 leading-relaxed">
+            {description}
+        </p>
     </div>
 );
 

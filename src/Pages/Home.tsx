@@ -93,38 +93,38 @@ const TariffCardInner: React.FC<TariffCardInnerProps> = ({ tariff, onClick }) =>
         }
       }}
       className={[
-        'relative overflow-hidden rounded-xl p-6 h-80 md:h-[420px] flex flex-col min-h-0',
+        'relative overflow-hidden rounded-2xl p-8 h-80 md:h-[420px] flex flex-col min-h-0',
         'bg-white shadow-xl shadow-black/20 transition-all duration-300 ease-out',
         'border-b-8 border-transparent',
-        'will-change-transform',
-        'hover:border-[#FFC72C]',
+        'hover:border-[#FFC72C] hover:-translate-y-2', // Añadí un pequeño salto al pasar el ratón
         'hover:shadow-[0_20px_40px_-5px_#FFC72C20]',
         'cursor-pointer',
       ].join(' ')}
     >
-      <header className="relative z-10 flex items-start justify-between flex-shrink-0 gap-4 mb-4">
-        <h3 className="text-xl font-bold text-gray-900 transition-colors duration-300 hover:text-[#FFC72C]">
+      <header className="flex flex-col flex-shrink-0 mb-6 space-y-2">
+        <h3 className="text-xl font-extrabold text-gray-900 transition-colors duration-300 group-hover:text-[#FFC72C]">
           {tariff.name}
         </h3>
-        <div className="text-right">
-          <div className="text-3xl font-black text-gray-900 transition-colors duration-300 hover:text-[#FFC72C]">
-            {tariff.price}
-          </div>
-          <div className="text-sm text-gray-700">/mes</div>
+        <div className="flex items-baseline gap-1">
+          <span className="text-4xl font-black text-[#FFC72C]">
+            {tariff.price.split('€')[0]}€
+          </span>
+          <span className="text-sm font-medium text-gray-500">/mes</span>
         </div>
       </header>
 
-      <ul className="relative z-10 flex-grow min-h-0 pt-1 pr-2 space-y-3 overflow-auto">
+      <ul className="flex-grow min-h-0 pr-2 space-y-4 overflow-auto scrollbar-thin">
         {tariff.features.map((f, i) => (
-          <li key={i} className="flex items-start gap-3 text-gray-900">
-            <svg className="w-5 h-5 mt-1 text-[#FFC72C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden>
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+          <li key={i} className="flex items-start gap-3 text-gray-800">
+            <svg className="w-5 h-5 mt-0.5 flex-shrink-0 text-[#FFC72C]" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
             </svg>
-            <span className="text-base">{f}</span>
+            <span className="text-sm leading-tight">{f}</span>
           </li>
         ))}
       </ul>
-      <div className="absolute inset-0 flex items-center justify-center p-6 text-xl font-bold text-white transition-opacity duration-300 opacity-0 bg-black/50 hover:opacity-100">
+      
+      <div className="absolute inset-0 flex items-center justify-center text-lg font-bold text-white transition-opacity duration-300 opacity-0 bg-black/70 hover:opacity-100">
         VER DETALLES
       </div>
     </article>

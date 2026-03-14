@@ -115,11 +115,12 @@ const TariffCard: React.FC<TariffCardProps> = ({ tariff }) => {
     const priceMatch = tariff.price.match(/(\d+)/);
     const priceUnit = tariff.price.replace(priceMatch ? priceMatch[1] : '', '').trim();
     const { fiberSpeed, mobileData, calls, tv } = parseFeatures(tariff.features, tariff.price);
-    const baseClasses = "relative p-10 rounded-2xl transition-all duration-300 transform shadow-2xl"; 
-    const bgClasses = "bg-black text-white border-2 border-[#FFC72C]"; 
+    
+    const baseClasses = "relative p-10 rounded-2xl transition-all duration-300 transform shadow-2xl bg-black text-white border-2 border-[#FFC72C]"; 
     const primaryText = 'text-[#FFC72C]'; 
     const secondaryText = 'text-white/80'; 
-    const featureIcon = <CheckCircle className="w-6 h-6 text-[#FFC72C]" />; 
+    const featureIcon = <CheckCircle className="w-6 h-6 text-[#FFC72C] flex-shrink-0 mt-0.5" />; 
+    
     const buttonClasses = [
         'mt-10 w-full block text-center', 
         'inline-flex items-center justify-center px-8 py-3.5 text-xl font-black uppercase rounded-xl relative z-10',
@@ -133,9 +134,8 @@ const TariffCard: React.FC<TariffCardProps> = ({ tariff }) => {
         'hover:after:scale-x-100', 
     ].join(' ');
 
-
     return (
-        <div className={`${baseClasses} ${bgClasses}`}>
+        <div className={baseClasses}>
             
             <h3 className={`text-4xl font-extrabold mt-2 ${primaryText}`}>{tariff.name}</h3>
             
@@ -148,45 +148,45 @@ const TariffCard: React.FC<TariffCardProps> = ({ tariff }) => {
                 <p className={`text-lg font-bold ${primaryText}`}>Características del Plan:</p>
                 
                 {fiberSpeed !== 'N/A' && (
-                    <div className="flex items-start space-x-3">
+                    <div className="flex items-start gap-4">
                         {featureIcon}
-                        <span className={secondaryText + ' text-lg'}>
-                            <strong className='font-black'>{fiberSpeed}</strong> Fibra Simétrica de Alta Velocidad, ideal para teletrabajo y streaming 4K.
+                        <span className={secondaryText + ' text-lg leading-relaxed'}>
+                            <strong className='font-black text-white'>{fiberSpeed}</strong> Fibra Simétrica de Alta Velocidad, ideal para teletrabajo y streaming 4K.
                         </span>
                     </div>
                 )}
 
                 {mobileData !== 'N/A' && (
-                    <div className="flex items-start space-x-3">
+                    <div className="flex items-start gap-4">
                         {featureIcon}
-                        <span className={secondaryText + ' text-lg'}>
-                            Datos Móviles: <strong className='font-black'>{mobileData}</strong>. Suficientes para navegar sin preocupaciones fuera de casa.
+                        <span className={secondaryText + ' text-lg leading-relaxed'}>
+                            Datos Móviles: <strong className='font-black text-white'>{mobileData}</strong>. Suficientes para navegar sin preocupaciones fuera de casa.
                         </span>
                     </div>
                 )}
 
                 {calls !== 'N/A' && (
-                    <div className="flex items-start space-x-3">
+                    <div className="flex items-start gap-4">
                         {featureIcon}
-                        <span className={secondaryText + ' text-lg'}>
-                            <strong className='font-black'>{calls}</strong> a fijos y móviles nacionales.
+                        <span className={secondaryText + ' text-lg leading-relaxed'}>
+                            <strong className='font-black text-white'>{calls}</strong> a fijos y móviles nacionales.
                         </span>
                     </div>
                 )}
 
                 {tv && (
-                    <div className="flex items-start space-x-3">
+                    <div className="flex items-start gap-4">
                         {featureIcon}
-                        <span className={secondaryText + ' text-lg'}>
-                            <strong className='font-black'>{tv}</strong>. Disfruta del mejor contenido con canales temáticos.
+                        <span className={secondaryText + ' text-lg leading-relaxed'}>
+                            <strong className='font-black text-white'>{tv}</strong>. Disfruta del mejor contenido con canales temáticos.
                         </span>
                     </div>
                 )}
                 
                 {tariff.features.filter(f => !f.includes('Fibra') && !f.includes('Móvil') && !f.includes('Llamadas') && !f.includes('TV')).map((f, i) => (
-                    <div key={i} className="flex items-start space-x-3">
+                    <div key={i} className="flex items-start gap-4">
                         {featureIcon}
-                        <span className={secondaryText + ' text-lg'}>
+                        <span className={secondaryText + ' text-lg leading-relaxed'}>
                             {f}
                         </span>
                     </div>
