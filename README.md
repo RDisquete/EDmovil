@@ -25,3 +25,15 @@ La web de ED Movil ha sido construida enfocándose en la **experiencia de usuari
 4. **Optimización SEO:** Estructura de etiquetas preparada para posicionamiento en buscadores locales.
 
 ---
+
+## 🛡️ Calidad Técnica y Testing
+
+Para garantizar la estabilidad en producción, he implementado una suite de pruebas unitarias sobre los componentes clave de la plataforma. El objetivo es asegurar que la lógica de comparación de tarifas y los formularios de contacto funcionen correctamente tras cada despliegue.
+
+* **Stack de Testing:** `Vitest` para ejecución de tests y `@testing-library/react` para la validación de componentes.
+* **Cobertura:** * `Home`: Validación de renderizado de ofertas.
+    * `Formulario de Contacto`: Verificación de estados y validación de campos.
+    * `Lógica de Tarifas`: Cálculo y comparativa de precios.
+* **Estado:** Integrado en el flujo de CI/CD para evitar regresiones antes de cada despliegue.
+
+---
